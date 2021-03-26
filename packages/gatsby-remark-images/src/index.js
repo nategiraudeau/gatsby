@@ -83,9 +83,9 @@ module.exports = (
     const getCaptionString = () => {
       const captionOptions = Array.isArray(options.showCaptions)
         ? options.showCaptions
-        : (options.showCaptions === true && node.alt !== EMPTY_ALT)
-          ? ["title", "alt"]
-          : false
+        : options.showCaptions === true && node.alt !== EMPTY_ALT
+        ? [`title`, `alt`]
+        : false
 
       if (captionOptions) {
         for (const option of captionOptions) {
